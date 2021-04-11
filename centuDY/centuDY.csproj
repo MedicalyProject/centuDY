@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -71,11 +79,54 @@
     <Content Include="App_Data\centuDYDB_log.ldf">
       <DependentUpon>centuDYDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Models\CentuDYModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CentuDYModel.Context.cs</LastGenOutput>
+      <DependentUpon>CentuDYModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\CentuDYModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CentuDYModel.edmx</DependentUpon>
+      <LastGenOutput>CentuDYModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Pages\HomePage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factory\MedicineFactory.cs" />
+    <Compile Include="Models\Cart.cs">
+      <DependentUpon>CentuDYModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CentuDYModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CentuDYModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CentuDYModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CentuDYModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CentuDYModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CentuDYModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetailTransaction.cs">
+      <DependentUpon>CentuDYModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HeaderTransaction.cs">
+      <DependentUpon>CentuDYModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Medicine.cs">
+      <DependentUpon>CentuDYModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>CentuDYModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>CentuDYModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Views\MasterPage.Master.cs">
@@ -94,6 +145,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Models\CentuDYModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CentuDYModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CentuDYModel.edmx.diagram">
+      <DependentUpon>CentuDYModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\MasterPage.Master" />
     <None Include="Web.Debug.config">
@@ -105,7 +163,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Handlers\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
