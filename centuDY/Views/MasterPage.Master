@@ -5,11 +5,12 @@
 <html>
 <head runat="server">
     <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div>
+            <asp:Button ID="btn_home" runat="server" Text="Home"/>
+        </div>
         <div>
             <asp:ContentPlaceHolder ID="cph_content" runat="server">
             </asp:ContentPlaceHolder>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using centuDY.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,12 @@ namespace centuDY.Views.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lbl_welcome.Visible = false;
+            if (Session["loggedInUserName"] != null)
+            {
+                lbl_welcome.Text = "Welcome, " + Session["loggedInUserName"].ToString();
+                lbl_welcome.Visible = true;
+            }
         }
     }
 }
