@@ -89,13 +89,16 @@
       <DependentUpon>CentuDYModel.edmx</DependentUpon>
       <LastGenOutput>CentuDYModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Pages\HomePage.aspx" />
-    <Content Include="Views\Pages\LoginPage.aspx" />
+    <Content Include="Views\Pages\Home.aspx" />
+    <Content Include="Views\Pages\Login.aspx" />
+    <Content Include="Views\Pages\Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Factory\MedicineFactory.cs" />
-    <Compile Include="Handlers\UserHandlers.cs" />
+    <Compile Include="Factory\UserFactory.cs" />
+    <Compile Include="Handlers\UserHandler.cs" />
     <Compile Include="Models\Cart.cs">
       <DependentUpon>CentuDYModel.tt</DependentUpon>
     </Compile>
@@ -139,19 +142,26 @@
     <Compile Include="Views\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\HomePage.aspx.cs">
-      <DependentUpon>HomePage.aspx</DependentUpon>
+    <Compile Include="Views\Pages\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Pages\HomePage.aspx.designer.cs">
-      <DependentUpon>HomePage.aspx</DependentUpon>
+    <Compile Include="Views\Pages\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\LoginPage.aspx.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
+    <Compile Include="Views\Pages\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Pages\LoginPage.aspx.designer.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
+    <Compile Include="Views\Pages\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

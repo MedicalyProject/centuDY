@@ -10,6 +10,8 @@
     <form id="form1" runat="server">
         <div>
             <asp:Button ID="btn_home" runat="server" Text="Home"/>
+            <asp:Button ID="btn_login" runat="server" Text="Login" OnClick="btn_login_Click" />
+            <asp:Button ID="btn_logout" runat="server" Text="Logout" OnClick="btn_logout_Click"/>
         </div>
         <div>
             <asp:ContentPlaceHolder ID="cph_content" runat="server">
