@@ -9,9 +9,14 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Button ID="btn_home" runat="server" Text="Home"/>
-            <asp:Button ID="btn_login" runat="server" Text="Login" OnClick="btn_login_Click" />
+            <asp:Button ID="btn_view_medicine" runat="server" Text="View Medicine" OnClick="btn_view_medicine_Click"/>
+            <asp:Button ID="btn_view_profile" runat="server" Text="View Profile" OnClick="btn_view_profile_Click" />
             <asp:Button ID="btn_logout" runat="server" Text="Logout" OnClick="btn_logout_Click"/>
+            <asp:Button ID="btn_view_cart" runat="server" Text="View Cart" OnClick="btn_view_cart_Click" />
+            <asp:Button ID="btn_view_transaction_history" runat="server" Text="View Transaction History" OnClick="btn_view_transaction_history_Click" />
+            <asp:Button ID="btn_insert_medicine" runat="server" Text="Insert Medicine" OnClick="btn_insert_medicine_Click" />
+            <asp:Button ID="btn_view_users" runat="server" Text="View Users" OnClick="btn_view_users_Click" />
+            <asp:Button ID="btn_view_transactions_report" runat="server" Text="View Transactions Report" OnClick="btn_view_transactions_report_Click" />
         </div>
         <div>
             <asp:ContentPlaceHolder ID="cph_content" runat="server">

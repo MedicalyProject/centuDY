@@ -89,9 +89,16 @@
       <DependentUpon>CentuDYModel.edmx</DependentUpon>
       <LastGenOutput>CentuDYModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Pages\Admin\InsertMedicine.aspx" />
+    <Content Include="Views\Pages\Admin\ViewTransactionsReport.aspx" />
+    <Content Include="Views\Pages\Admin\ViewUsers.aspx" />
     <Content Include="Views\Pages\Home.aspx" />
     <Content Include="Views\Pages\Login.aspx" />
+    <Content Include="Views\Pages\Member\ViewCart.aspx" />
+    <Content Include="Views\Pages\Member\ViewTransactionHistory.aspx" />
     <Content Include="Views\Pages\Register.aspx" />
+    <Content Include="Views\Pages\ViewMedicine.aspx" />
+    <Content Include="Views\Pages\ViewProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +149,27 @@
     <Compile Include="Views\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pages\Admin\InsertMedicine.aspx.cs">
+      <DependentUpon>InsertMedicine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\Admin\InsertMedicine.aspx.designer.cs">
+      <DependentUpon>InsertMedicine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Admin\ViewTransactionsReport.aspx.cs">
+      <DependentUpon>ViewTransactionsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\Admin\ViewTransactionsReport.aspx.designer.cs">
+      <DependentUpon>ViewTransactionsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Admin\ViewUsers.aspx.cs">
+      <DependentUpon>ViewUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\Admin\ViewUsers.aspx.designer.cs">
+      <DependentUpon>ViewUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -156,12 +184,40 @@
     <Compile Include="Views\Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pages\Member\ViewCart.aspx.cs">
+      <DependentUpon>ViewCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\Member\ViewCart.aspx.designer.cs">
+      <DependentUpon>ViewCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Member\ViewTransactionHistory.aspx.cs">
+      <DependentUpon>ViewTransactionHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\Member\ViewTransactionHistory.aspx.designer.cs">
+      <DependentUpon>ViewTransactionHistory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Pages\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ViewMedicine.aspx.cs">
+      <DependentUpon>ViewMedicine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\ViewMedicine.aspx.designer.cs">
+      <DependentUpon>ViewMedicine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ViewProfile.aspx.cs">
+      <DependentUpon>ViewProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\ViewProfile.aspx.designer.cs">
+      <DependentUpon>ViewProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

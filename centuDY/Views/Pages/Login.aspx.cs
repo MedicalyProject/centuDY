@@ -15,6 +15,11 @@ namespace centuDY.Views.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((Session["current_user"] != null))
+            {
+                Response.Redirect("~/Views/Pages/Home.aspx");
+            }
+
             lbl_error.Visible = false;
 
             hpr_register.NavigateUrl = "/Views/Pages/Register.aspx";
