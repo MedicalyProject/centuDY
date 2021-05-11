@@ -27,6 +27,7 @@ namespace centuDY.Views.Pages
                     }
                     else
                     {
+                        grv_medicines.Columns[6].Visible = false;
                     }
                 }
                 else
@@ -81,6 +82,19 @@ namespace centuDY.Views.Pages
         protected void btn_insert_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/Pages/Admin/InsertMedicine.aspx");
+        }
+
+        protected void grv_medicines_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Select")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                GridViewRow row = grv_medicines.Rows[index];
+
+                string id = row.Cells[0].Text;
+                Response.Redirect("~/Views/Pages/Member/AddToCart.aspx?id=" + id);
+            }
         }
     }
 }

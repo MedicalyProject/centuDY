@@ -16,7 +16,7 @@
         </table>
     </div>
     <div>
-        <asp:GridView ID="grv_medicines" runat="server" AutoGenerateColumns="False" OnRowDeleting="grv_medicines_RowDeleting" OnRowEditing="grv_medicines_RowEditing" >
+        <asp:GridView ID="grv_medicines" runat="server" AutoGenerateColumns="False" OnRowDeleting="grv_medicines_RowDeleting" OnRowEditing="grv_medicines_RowEditing" OnRowCommand="grv_medicines_RowCommand">
             <Columns>
                 <asp:BoundField DataField="MedicineId" HeaderText="Id" SortExpression="MedicineId" />
                 <asp:BoundField DataField="Name" HeaderText="Medicine Name" SortExpression="Name" />
@@ -24,6 +24,9 @@
                 <asp:BoundField DataField="Stock" HeaderText="Stock" SortExpression="Stock" />
                 <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
                 <asp:CommandField ButtonType="Button" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" />
+                
+                <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Add to Cart" />
+                
             </Columns>
         </asp:GridView>
     </div>

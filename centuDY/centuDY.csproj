@@ -95,6 +95,7 @@
     <Content Include="Views\Pages\Admin\ViewUsers.aspx" />
     <Content Include="Views\Pages\Home.aspx" />
     <Content Include="Views\Pages\Login.aspx" />
+    <Content Include="Views\Pages\Member\AddToCart.aspx" />
     <Content Include="Views\Pages\Member\ViewCart.aspx" />
     <Content Include="Views\Pages\Member\ViewTransactionHistory.aspx" />
     <Content Include="Views\Pages\Register.aspx" />
@@ -195,6 +196,13 @@
     </Compile>
     <Compile Include="Views\Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Member\AddToCart.aspx.cs">
+      <DependentUpon>AddToCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\Member\AddToCart.aspx.designer.cs">
+      <DependentUpon>AddToCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\Member\ViewCart.aspx.cs">
       <DependentUpon>ViewCart.aspx</DependentUpon>
