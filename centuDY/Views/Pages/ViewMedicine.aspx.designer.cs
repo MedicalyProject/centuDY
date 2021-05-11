@@ -15,6 +15,15 @@ namespace centuDY.Views.Pages
     {
 
         /// <summary>
+        /// lbl_view_medicine control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_view_medicine;
+
+        /// <summary>
         /// txt_name control.
         /// </summary>
         /// <remarks>

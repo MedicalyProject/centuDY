@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/MasterPage.Master" AutoEventWireup="true" CodeBehind="ViewMedicine.aspx.cs" Inherits="centuDY.Views.Pages.ViewMedicine" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cph_content" runat="server">
+    <div>
+        <asp:Label ID="lbl_view_medicine" runat="server" Text="View Medicine" Font-Bold="True" Font-Size="X-Large"></asp:Label>
+    </div>
     <div>    
         <table>
             <tr>

@@ -59,7 +59,7 @@ namespace centuDY.Controllers
         {
             if (!MedicineHandler.deleteMedicine(int.Parse(id)))
             {
-                return "[!] DeleteError: Toy Not Found!";
+                return "[!] DeleteError: Medicine Not Found!";
             }
 
             return "[!] Delete Success";

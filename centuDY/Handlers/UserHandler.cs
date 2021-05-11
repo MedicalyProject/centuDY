@@ -10,6 +10,12 @@ namespace centuDY.Handlers
 {
     public static class UserHandler
     {
+
+        public static List<User> getAllMember()
+        {
+            return UserRepository.getUsersMember();
+        }
+
         public static User getUserByEmailAndPassword(string email, string password)
         {
             if (email != null && password != null)
@@ -45,6 +51,15 @@ namespace centuDY.Handlers
                 return true;
             }
 
+            return false;
+        }
+
+        public static bool deleteUser(int id)
+        {
+            if (UserRepository.deleteUser(id))
+            {
+                return true;
+            }
             return false;
         }
     }
