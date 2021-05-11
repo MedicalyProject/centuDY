@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CentuDYDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="centuDYDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cart">
           <Key>
             <PropertyRef Name="UserId" />
@@ -38,8 +38,8 @@
           <Property Name="MedicineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="32" Nullable="false" />
           <Property Name="Description" Type="varchar" MaxLength="32" Nullable="false" />
-          <Property Name="Stock" Type="varchar" MaxLength="32" Nullable="false" />
-          <Property Name="Price" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="Stock" Type="int" />
+          <Property Name="Price" Type="int" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -133,7 +133,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CentuDYDBModelStoreContainer">
+        <EntityContainer Name="centuDYDBModelStoreContainer">
           <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DetailTransaction" EntityType="Self.DetailTransaction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HeaderTransaction" EntityType="Self.HeaderTransaction" Schema="dbo" store:Type="Tables" />
@@ -169,7 +169,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="CentuDYDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="centuDYDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Cart">
           <Key>
             <PropertyRef Name="UserId" />
@@ -209,8 +209,8 @@
           <Property Name="MedicineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Stock" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Price" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Stock" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
           <NavigationProperty Name="Carts" Relationship="Self.FK__Cart__MedicineId__2B3F6F97" FromRole="Medicine" ToRole="Cart" />
           <NavigationProperty Name="DetailTransactions" Relationship="Self.FK__DetailTra__Medic__31EC6D26" FromRole="Medicine" ToRole="DetailTransaction" />
         </EntityType>
@@ -310,7 +310,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CentuDYDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="centuDYDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Carts" EntityType="Self.Cart" />
           <EntitySet Name="DetailTransactions" EntityType="Self.DetailTransaction" />
           <EntitySet Name="HeaderTransactions" EntityType="Self.HeaderTransaction" />
@@ -347,9 +347,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CentuDYDBModelStoreContainer" CdmEntityContainer="CentuDYDBEntities">
+        <EntityContainerMapping StorageEntityContainer="centuDYDBModelStoreContainer" CdmEntityContainer="centuDYDBEntities">
           <EntitySetMapping Name="Carts">
-            <EntityTypeMapping TypeName="CentuDYDBModel.Cart">
+            <EntityTypeMapping TypeName="centuDYDBModel.Cart">
               <MappingFragment StoreEntitySet="Cart">
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="MedicineId" ColumnName="MedicineId" />
@@ -358,7 +358,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DetailTransactions">
-            <EntityTypeMapping TypeName="CentuDYDBModel.DetailTransaction">
+            <EntityTypeMapping TypeName="centuDYDBModel.DetailTransaction">
               <MappingFragment StoreEntitySet="DetailTransaction">
                 <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
                 <ScalarProperty Name="MedicineId" ColumnName="MedicineId" />
@@ -367,7 +367,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HeaderTransactions">
-            <EntityTypeMapping TypeName="CentuDYDBModel.HeaderTransaction">
+            <EntityTypeMapping TypeName="centuDYDBModel.HeaderTransaction">
               <MappingFragment StoreEntitySet="HeaderTransaction">
                 <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -376,7 +376,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Medicines">
-            <EntityTypeMapping TypeName="CentuDYDBModel.Medicine">
+            <EntityTypeMapping TypeName="centuDYDBModel.Medicine">
               <MappingFragment StoreEntitySet="Medicine">
                 <ScalarProperty Name="MedicineId" ColumnName="MedicineId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -387,7 +387,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Roles">
-            <EntityTypeMapping TypeName="CentuDYDBModel.Role">
+            <EntityTypeMapping TypeName="centuDYDBModel.Role">
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
@@ -395,7 +395,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="CentuDYDBModel.User">
+            <EntityTypeMapping TypeName="centuDYDBModel.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />

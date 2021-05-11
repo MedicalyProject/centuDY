@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="CentuDYDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="centuDYDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Cart">
     <Key>
       <PropertyRef Name="UserId" />
@@ -39,8 +39,8 @@
     <Property Name="MedicineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Stock" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Price" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Stock" Type="Int32" />
+    <Property Name="Price" Type="Int32" />
     <NavigationProperty Name="Carts" Relationship="Self.FK__Cart__MedicineId__2B3F6F97" FromRole="Medicine" ToRole="Cart" />
     <NavigationProperty Name="DetailTransactions" Relationship="Self.FK__DetailTra__Medic__31EC6D26" FromRole="Medicine" ToRole="DetailTransaction" />
   </EntityType>
@@ -140,7 +140,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="CentuDYDBEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="centuDYDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Carts" EntityType="Self.Cart" />
     <EntitySet Name="DetailTransactions" EntityType="Self.DetailTransaction" />
     <EntitySet Name="HeaderTransactions" EntityType="Self.HeaderTransaction" />

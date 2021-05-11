@@ -8,7 +8,7 @@ namespace centuDY.Repositories
 {
     public static class UserRepository
     {
-        private static CentuDYDBEntities db = CentuDYDB.getInstance();
+        private static centuDYDBEntities db = CentuDYDB.getInstance();
 
         public static User getUserByEmailAndPassword(string email, string password)
         {
