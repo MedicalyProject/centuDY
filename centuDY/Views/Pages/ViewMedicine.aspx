@@ -4,7 +4,7 @@
         <table>
             <tr>
                 <td>
-                    <asp:TextBox ID="txt_name" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txt_name" runat="server" placeholder="Filter by name" ></asp:TextBox>
                 </td>
                 <td>
                     <asp:Button ID="btn_filter" runat="server" Text="Filter" OnClick="btn_filter_Click" />

@@ -62,18 +62,20 @@ namespace centuDY.Views.Pages
             grv_medicines.DataBind();
         }
 
-
-        private void filteredGridView(string name)
-        {
-            List<Medicine> medicines = MedicineController.getMedicineName(name);
-
-            grv_medicines.DataSource = medicines;
-            grv_medicines.DataBind();
-        }
-
         protected void btn_filter_Click(object sender, EventArgs e)
         {
+            List<Medicine> medicines = MedicineController.getMedicineName(txt_name.Text);
 
+            if (medicines != null)
+            {
+
+                grv_medicines.DataSource = medicines;
+                grv_medicines.DataBind();
+                
+                return;
+            }
+
+            lbl_delete_error.Text = "[!] Medicine not found";
         }
 
         protected void btn_insert_Click(object sender, EventArgs e)

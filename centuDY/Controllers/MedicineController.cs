@@ -20,7 +20,7 @@ namespace centuDY.Controllers
             if (response.Equals(""))
             {
                 MedicineHandler.addMedicine(name, description, medicine_stock, medicine_price);
-                response = "";
+                response = "Sucess add new medicine!";
             }
 
             return response;
