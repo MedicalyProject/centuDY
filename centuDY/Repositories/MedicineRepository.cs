@@ -65,14 +65,14 @@ namespace centuDY.Repositories
 
         public static bool deleteMedicine(int id)
         {
-            Medicine toy = getMedicineById(id);
+            Medicine medicine = getMedicineById(id);
 
-            if (toy == null)
+            if (medicine == null)
             {
                 return false;
             }
 
-            db.Medicines.Remove(toy);
+            db.Medicines.Remove(medicine);
             db.SaveChanges();
 
             return true;
