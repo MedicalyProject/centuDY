@@ -44,7 +44,7 @@ namespace centuDY.Views
         protected void btn_logout_Click(object sender, EventArgs e)
         {
             Session["current_user"] = null;
-            Response.Redirect("~/Views/Pages/Login.aspx");
+            Response.Redirect("~/Views/Pages/Auth/Login.aspx");
         }
 
         protected void btn_view_transactions_report_Click(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace centuDY.Views
 
         protected void btn_view_profile_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Pages/ViewProfile.aspx");
+            Response.Redirect("~/Views/Pages/Profile/ViewProfile.aspx");
         }
 
         protected void btn_view_medicine_Click(object sender, EventArgs e)

@@ -32,7 +32,7 @@ namespace centuDY.Views.Pages
                 }
                 else
                 {
-                    Response.Redirect("~/Views/Pages/Login.aspx");
+                    Response.Redirect("~/Views/Pages/Auth/Login.aspx");
                 }
 
                 refreshGridView();

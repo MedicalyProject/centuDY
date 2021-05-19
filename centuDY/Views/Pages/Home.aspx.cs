@@ -20,7 +20,7 @@ namespace centuDY.Views.Pages
                 lbl_welcome.Visible = true;
             } else
             {
-                Response.Redirect("~/Views/Pages/Login.aspx"); ;
+                Response.Redirect("~/Views/Pages/Auth/Login.aspx"); ;
             }
         }
     }

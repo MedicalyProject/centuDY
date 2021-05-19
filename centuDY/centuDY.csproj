@@ -93,14 +93,16 @@
     <Content Include="Views\Pages\Admin\UpdateMedicine.aspx" />
     <Content Include="Views\Pages\Admin\ViewTransactionsReport.aspx" />
     <Content Include="Views\Pages\Admin\ViewUsers.aspx" />
+    <Content Include="Views\Pages\Auth\Login.aspx" />
     <Content Include="Views\Pages\Home.aspx" />
-    <Content Include="Views\Pages\Login.aspx" />
     <Content Include="Views\Pages\Member\AddToCart.aspx" />
     <Content Include="Views\Pages\Member\ViewCart.aspx" />
     <Content Include="Views\Pages\Member\ViewTransactionHistory.aspx" />
-    <Content Include="Views\Pages\Register.aspx" />
+    <Content Include="Views\Pages\Auth\Register.aspx" />
+    <Content Include="Views\Pages\Profile\ChangePassword.aspx" />
+    <Content Include="Views\Pages\Profile\UpdateProfile.aspx" />
     <Content Include="Views\Pages\ViewMedicine.aspx" />
-    <Content Include="Views\Pages\ViewProfile.aspx" />
+    <Content Include="Views\Pages\Profile\ViewProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -186,19 +188,19 @@
     <Compile Include="Views\Pages\Admin\ViewUsers.aspx.designer.cs">
       <DependentUpon>ViewUsers.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pages\Auth\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\Auth\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Pages\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Pages\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Pages\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\Member\AddToCart.aspx.cs">
       <DependentUpon>AddToCart.aspx</DependentUpon>
@@ -221,12 +223,26 @@
     <Compile Include="Views\Pages\Member\ViewTransactionHistory.aspx.designer.cs">
       <DependentUpon>ViewTransactionHistory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\Register.aspx.cs">
+    <Compile Include="Views\Pages\Auth\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Pages\Register.aspx.designer.cs">
+    <Compile Include="Views\Pages\Auth\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Profile\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\Profile\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Profile\UpdateProfile.aspx.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\Profile\UpdateProfile.aspx.designer.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\ViewMedicine.aspx.cs">
       <DependentUpon>ViewMedicine.aspx</DependentUpon>
@@ -235,11 +251,11 @@
     <Compile Include="Views\Pages\ViewMedicine.aspx.designer.cs">
       <DependentUpon>ViewMedicine.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\ViewProfile.aspx.cs">
+    <Compile Include="Views\Pages\Profile\ViewProfile.aspx.cs">
       <DependentUpon>ViewProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Pages\ViewProfile.aspx.designer.cs">
+    <Compile Include="Views\Pages\Profile\ViewProfile.aspx.designer.cs">
       <DependentUpon>ViewProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

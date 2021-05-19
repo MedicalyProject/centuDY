@@ -21,7 +21,7 @@ namespace centuDY.Views.Pages.Admin
 
                     if (!logged_in_user.Role.RoleName.Equals("Administrator"))
                     {
-                        Response.Redirect("~/Views/Pages/Login.aspx");
+                        Response.Redirect("~/Views/Pages/Auth/Login.aspx");
                     }
 
 
@@ -35,7 +35,7 @@ namespace centuDY.Views.Pages.Admin
                     txt_price.Text = medicine.Price.ToString();
                 } else
                 {
-                    Response.Redirect("~/Views/Pages/Login.aspx");
+                    Response.Redirect("~/Views/Pages/Auth/Login.aspx");
                 }          
             }
         }

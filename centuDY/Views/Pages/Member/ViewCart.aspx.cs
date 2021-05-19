@@ -20,12 +20,12 @@ namespace centuDY.Views.Pages.Member
                 {
                     if (!logged_in_user.Role.RoleName.Equals("Member"))
                     {
-                        Response.Redirect("~/Views/Pages/Login.aspx");
+                        Response.Redirect("~/Views/Pages/Auth/Login.aspx");
                     }
                 }
                 else
                 {
-                    Response.Redirect("~/Views/Pages/Login.aspx");
+                    Response.Redirect("~/Views/Pages/Auth/Login.aspx");
                 }
 
                 refreshGridView(logged_in_user.UserId);

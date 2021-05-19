@@ -56,6 +56,45 @@ namespace centuDY.Repositories
             return true;
         }
 
+        public static bool updateProfile(int id, string name, string gender, string phoneNumber, string address)
+        {
+            try
+            {
+                User user = getUserById(id);
+
+                user.Name = name;
+                user.Gender = gender;
+                user.PhoneNumber = phoneNumber;
+                user.Address = address;
+
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception er)
+            {
+
+                throw er;
+            }
+        }
+
+        public static bool updatePassword(int id, string password)
+        {
+            try
+            {
+                User user = getUserById(id);
+
+                user.Password = password;
+
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception er)
+            {
+
+                throw er;
+            }
+        }
+
         public static bool addNewUser(User user)
         {
             try
