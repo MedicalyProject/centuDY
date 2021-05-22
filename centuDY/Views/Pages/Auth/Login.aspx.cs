@@ -13,6 +13,14 @@ namespace centuDY.Views.Pages.Auth
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.Cookies.Get("loginCookie") != null)
+            {
+                User user  = UserController.getUser(int.Parse(Request.Cookies.Get("loginCookie").Value));
+
+                txt_email.Text = user.Username;
+                txt_password.Attributes.Add("value", user.Password);
+            }
+
             if ((Session["current_user"] != null))
             {
                 Response.Redirect("~/Views/Pages/Home.aspx");
