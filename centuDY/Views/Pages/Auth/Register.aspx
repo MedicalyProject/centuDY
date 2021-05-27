@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/MasterPage.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="centuDY.Views.Pages.Auth.Register" %>
 <asp:Content ID="Content" ContentPlaceHolderID="cph_content" runat="server">
     <div>
+        <asp:Label ID="lbl_register" runat="server" Text="CentuDY Register" Font-Bold="True" Font-Size="X-Large"></asp:Label>
+    </div>  
+    <div>
         <table>
             <tr>
                 <td>Username </td>

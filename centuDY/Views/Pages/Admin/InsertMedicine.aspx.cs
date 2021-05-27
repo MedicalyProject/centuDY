@@ -39,6 +39,15 @@ namespace centuDY.Views.Pages.Admin
             string stock = txt_stock.Text;
 
             lbl_error.Text = MedicineController.addMedicine(name, description, stock, price);
+
+            if (lbl_error.Text.Equals("Sucess add new medicine!"))
+            {
+                txt_name.Text = "";
+                txt_description.Text = "";
+                txt_price.Text = "";
+                txt_stock.Text = "";
+            }
+            
         }
     }
 }

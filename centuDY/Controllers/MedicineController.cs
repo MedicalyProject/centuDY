@@ -31,6 +31,11 @@ namespace centuDY.Controllers
             return MedicineHandler.getMedicines();
         }
 
+        public static List<Medicine> getRandomMedicines()
+        {
+            return MedicineHandler.getRandomMedicines();
+        }
+
         public static List<Medicine> getMedicineName(string name)
         {
             return MedicineHandler.getFilteredMedicines(name);

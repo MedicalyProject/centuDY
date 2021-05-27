@@ -37,6 +37,7 @@ namespace centuDY.Views
                 btn_view_cart.Visible = false;
                 btn_view_transaction_history.Visible = false;
                 btn_logout.Visible = false;
+                btn_home.Visible = false;
             }
         }
 
@@ -84,6 +85,11 @@ namespace centuDY.Views
         protected void btn_view_medicine_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/Pages/ViewMedicine.aspx");
+        }
+
+        protected void btn_home_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Pages/Home.aspx");
         }
     }
 }

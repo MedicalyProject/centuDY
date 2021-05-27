@@ -15,6 +15,23 @@ namespace centuDY.Handlers
             return MedicineRepository.getMedicines();
         }
 
+        public static List<Medicine> getRandomMedicines()
+        {
+            List<Medicine> medicines = MedicineRepository.getMedicines();
+
+            Random random = new Random();
+            int count = medicines.Count;
+
+            while (count > 5)
+            {
+                int index = random.Next(count);
+                medicines.RemoveAt(index);
+                count = medicines.Count;
+            }
+
+            return medicines;
+        }
+
         public static List<Medicine> getFilteredMedicines(string name)
         {
             return MedicineRepository.getMedicinesByName(name);

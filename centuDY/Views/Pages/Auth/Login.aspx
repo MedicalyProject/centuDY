@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/MasterPage.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="centuDY.Views.Pages.Auth.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cph_content" runat="server">
-      <div>
+    <div>
+        <asp:Label ID="lbl_login" runat="server" Text="CentuDY Login" Font-Bold="True" Font-Size="X-Large"></asp:Label>
+    </div>  
+    <div>
         <table>
             <tr>
                 <td>Email </td>
