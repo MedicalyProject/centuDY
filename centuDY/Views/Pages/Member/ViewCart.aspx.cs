@@ -38,6 +38,20 @@ namespace centuDY.Views.Pages.Member
 
             grv_user_carts.DataSource = carts;
             grv_user_carts.DataBind();
+            calculateGrandTotal();
+            
+        }
+
+        //kalkulasi grand total dari cart saat ini
+        private void calculateGrandTotal()
+        {
+            int sum = 0;
+            for (int i = 0; i < grv_user_carts.Rows.Count; i++)
+            {
+                Label subtotal = (Label)grv_user_carts.Rows[i].FindControl("lbl_sub_total");
+                sum += int.Parse(subtotal.Text);
+            }
+            lbl_grand_total.Text = sum.ToString();
         }
 
         protected void btn_checkout_Click(object sender, EventArgs e)

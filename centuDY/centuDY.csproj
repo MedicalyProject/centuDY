@@ -110,6 +110,7 @@
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\MedicineController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Factory\CartFactory.cs" />
     <Compile Include="Factory\MedicineFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handlers\CartHandler.cs" />
