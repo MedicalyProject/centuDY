@@ -36,7 +36,7 @@ namespace centuDY.Controllers
             if (response.Equals(""))
             {
                 UserHandler.addNewUserMember(username, password, name, gender, phoneNumber, address);
-                response = "Sucess Register User!";
+                response = "Success Register User!";
             }
 
             return response;

@@ -43,7 +43,11 @@ namespace centuDY.Views
 
         protected void btn_logout_Click(object sender, EventArgs e)
         {
+            //set session user to null and destroy cookie
             Session["current_user"] = null;
+            HttpCookie cookie = new HttpCookie("loginCookie");
+            cookie.Expires = DateTime.Now.AddHours(-1);
+            Response.Cookies.Add(cookie);
             Response.Redirect("~/Views/Pages/Auth/Login.aspx");
         }
 

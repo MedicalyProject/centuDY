@@ -41,7 +41,8 @@ namespace centuDY.Views.Pages.Auth
 
             if (user == null)
             {
-                lbl_error.Visible = true;
+                lbl_error.Visible = true; 
+                return;
             }
             else
             {
