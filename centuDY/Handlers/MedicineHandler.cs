@@ -66,10 +66,18 @@ namespace centuDY.Handlers
 
         public static bool deleteMedicine(int id)
         {
+
+            List<Cart> carts = CartRepository.getCartsByMedicineId(id);
+            if (!CartHandler.deleteCartList(carts)) { return false; }
+
+            List<DetailTransaction> detailTransactions = TransactionRepository.getDetailTransactionByMedicineId(id);
+            if (!TransactionsHandler.deleteDetailTransaction(detailTransactions)) { return false; }
+
             if (MedicineRepository.deleteMedicine(id))
             {
                 return true;
             }
+
             return false;
         }
     }

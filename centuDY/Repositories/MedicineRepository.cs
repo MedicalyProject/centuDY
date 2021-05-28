@@ -8,7 +8,7 @@ namespace centuDY.Repositories
 {
     public static class MedicineRepository
     {
-        private static centuDYDBEntities db = CentuDYDB.getInstance();
+        private static CentuDYDBEntities db = CentuDYDB.getInstance();
 
         public static List<Medicine> getMedicines()
         {

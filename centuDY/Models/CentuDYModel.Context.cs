@@ -13,10 +13,10 @@ namespace centuDY.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class centuDYDBEntities : DbContext
+    public partial class CentuDYDBEntities : DbContext
     {
-        public centuDYDBEntities()
-            : base("name=centuDYDBEntities")
+        public CentuDYDBEntities()
+            : base("name=CentuDYDBEntities")
         {
         }
     

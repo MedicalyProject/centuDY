@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="centuDYDBModelStoreContainer" CdmEntityContainer="centuDYDBEntities">
+  <EntityContainerMapping StorageEntityContainer="CentuDYDBModelStoreContainer" CdmEntityContainer="CentuDYDBEntities">
     <EntitySetMapping Name="Carts">
-      <EntityTypeMapping TypeName="centuDYDBModel.Cart">
+      <EntityTypeMapping TypeName="CentuDYDBModel.Cart">
         <MappingFragment StoreEntitySet="Cart">
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="MedicineId" ColumnName="MedicineId" />
@@ -11,7 +11,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DetailTransactions">
-      <EntityTypeMapping TypeName="centuDYDBModel.DetailTransaction">
+      <EntityTypeMapping TypeName="CentuDYDBModel.DetailTransaction">
         <MappingFragment StoreEntitySet="DetailTransaction">
           <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
           <ScalarProperty Name="MedicineId" ColumnName="MedicineId" />
@@ -20,7 +20,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="HeaderTransactions">
-      <EntityTypeMapping TypeName="centuDYDBModel.HeaderTransaction">
+      <EntityTypeMapping TypeName="CentuDYDBModel.HeaderTransaction">
         <MappingFragment StoreEntitySet="HeaderTransaction">
           <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -29,7 +29,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Medicines">
-      <EntityTypeMapping TypeName="centuDYDBModel.Medicine">
+      <EntityTypeMapping TypeName="CentuDYDBModel.Medicine">
         <MappingFragment StoreEntitySet="Medicine">
           <ScalarProperty Name="MedicineId" ColumnName="MedicineId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -40,7 +40,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Roles">
-      <EntityTypeMapping TypeName="centuDYDBModel.Role">
+      <EntityTypeMapping TypeName="CentuDYDBModel.Role">
         <MappingFragment StoreEntitySet="Role">
           <ScalarProperty Name="RoleId" ColumnName="RoleId" />
           <ScalarProperty Name="RoleName" ColumnName="RoleName" />
@@ -48,7 +48,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="centuDYDBModel.User">
+      <EntityTypeMapping TypeName="CentuDYDBModel.User">
         <MappingFragment StoreEntitySet="User">
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="RoleId" ColumnName="RoleId" />

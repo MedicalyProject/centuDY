@@ -82,5 +82,18 @@ namespace centuDY.Handlers
             }
             return false;
         }
+
+        public static bool deleteCartList(List<Cart> carts)
+        {
+
+            foreach (Cart cart in carts)
+            {
+                bool check = CartRepository.deleteCart(cart.UserId, cart.MedicineId);
+                if (!check) { return false; }
+
+            }
+
+            return true;
+        }
     }
 }

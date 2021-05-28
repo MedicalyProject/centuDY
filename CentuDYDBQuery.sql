@@ -37,7 +37,7 @@ CREATE TABLE Cart
 GO
 CREATE TABLE HeaderTransaction
 (
-	TransactionId INT PRIMARY KEY,
+	TransactionId INT IDENTITY(1, 1) PRIMARY KEY,
 	UserId  INT,
 	TransactionDate DATE NOT NULL,
 	FOREIGN KEY (UserId) REFERENCES [User](UserId),

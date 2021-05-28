@@ -8,13 +8,13 @@ namespace centuDY.Repositories
 {
     public static class CentuDYDB
     {
-        private static centuDYDBEntities db = null;
+        private static CentuDYDBEntities db = null;
 
-        public static centuDYDBEntities getInstance()
+        public static CentuDYDBEntities getInstance()
         {
             if (db == null)
             {
-                db = new centuDYDBEntities();
+                db = new CentuDYDBEntities();
             }
             return db;
         }

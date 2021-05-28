@@ -8,7 +8,7 @@ namespace centuDY.Repositories
 {
     public static class UserRepository
     {
-        private static centuDYDBEntities db = CentuDYDB.getInstance();
+        private static CentuDYDBEntities db = CentuDYDB.getInstance();
 
         public static List<User> getUsersMember()
         {
@@ -49,6 +49,9 @@ namespace centuDY.Repositories
             {
                 return false;
             }
+
+
+
 
             db.Users.Remove(user);
             db.SaveChanges();

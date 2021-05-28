@@ -99,11 +99,23 @@ namespace centuDY.Handlers
 
         public static bool deleteUser(int id)
         {
+       
+            List<HeaderTransaction> transactions = TransactionRepository.getHeaderTransactionsByUserId(id);
+            if (!TransactionsHandler.deleteTransaction(transactions)) { return false; }
+
+            List<Cart> carts = CartRepository.getCartsByUserId(id);
+
+            if (!CartHandler.deleteCartList(carts)) { return false; }
+
             if (UserRepository.deleteUser(id))
             {
                 return true;
             }
             return false;
         }
+
+
+
+
     }
 }

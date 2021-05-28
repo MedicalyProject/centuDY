@@ -37,5 +37,42 @@ namespace centuDY.Handlers
 
             return false;
         }
+
+        public static bool deleteDetailTransaction(List<DetailTransaction> detailTransactions)
+        {
+            foreach (DetailTransaction detailTransaction in detailTransactions)
+            {
+                bool check = TransactionRepository.deleteDetailTransaction(detailTransaction.TransactionId, detailTransaction.MedicineId);
+
+                if (!check)
+                {
+                    return false;
+                }
+
+            }
+            return true;
+        }
+
+        public static bool deleteTransaction(List<HeaderTransaction> transactions)
+        {
+            foreach (HeaderTransaction transaction in transactions)
+            {
+                int userId = 0;
+                if (transaction.UserId == null)
+                    userId = 0;
+                else
+                    userId = transaction.UserId.Value;
+
+                List<DetailTransaction> detailTransactions = TransactionRepository.getTransactionsByUserId(userId);
+
+                if (deleteDetailTransaction(detailTransactions))
+                {
+                    bool check = TransactionRepository.deleteHeaderTransaction(transaction.TransactionId);
+                    if (!check) { return false; };
+                }
+            }
+            return true;
+        }
+
     }
 }
