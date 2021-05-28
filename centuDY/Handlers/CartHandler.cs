@@ -14,6 +14,7 @@ namespace centuDY.Handlers
         {
             return CartRepository.getCartsByUserId(id);
         }
+
         public static List<Cart> getCartsByMedicineId(int id)
         {
             return CartRepository.getCartsByMedicineId(id);
@@ -22,7 +23,7 @@ namespace centuDY.Handlers
         //mengembalikan jumlah kuantitas medicine terpilih di cart yang belum di checkout
         public static int medicineQuantityReservedInOtherCarts(int medicineId)
         {
-            List<Cart> cartWithMedicine = CartRepository.getCartsByMedicineId(medicineId);
+            List<Cart> cartWithMedicine = getCartsByMedicineId(medicineId);
             return cartWithMedicine.Sum(cart => cart.Quantity);
         }
 
@@ -43,6 +44,17 @@ namespace centuDY.Handlers
                 return true;
             }
             return false;
+        }
+
+        //delegasi untuk mengurangi stok medicine dan untuk menghapus cart yang dibuat user 
+        public static bool emptyCarts(int userId, List<Cart> carts)
+        {
+            foreach(Cart cart in carts)
+            {
+                if(!MedicineRepository.reduceMedicineStock(cart.MedicineId, cart.Quantity)) return false;
+                if(!CartRepository.deleteCart(userId, cart.MedicineId)) return false;
+            }
+            return true;
         }
 
         //handler untuk menambah medicine ke cart

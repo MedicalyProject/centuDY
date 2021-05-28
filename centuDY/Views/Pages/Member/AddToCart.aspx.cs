@@ -48,7 +48,7 @@ namespace centuDY.Views.Pages.Member
             string id = Request["id"];
             User currentUser = (User)Session["current_user"];
 
-            string response = CartController.addItemToCart(currentUser,id,qty);
+            string response = CartController.addItemToCart(currentUser.UserId,id,qty);
 
             lbl_error.Text = response;
 

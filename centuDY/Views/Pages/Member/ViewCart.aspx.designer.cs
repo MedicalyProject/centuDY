@@ -60,12 +60,12 @@ namespace centuDY.Views.Pages.Member
         protected global::System.Web.UI.WebControls.Button btn_checkout;
 
         /// <summary>
-        /// lbl_delete_error control.
+        /// lbl_error control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_delete_error;
+        protected global::System.Web.UI.WebControls.Label lbl_error;
     }
 }

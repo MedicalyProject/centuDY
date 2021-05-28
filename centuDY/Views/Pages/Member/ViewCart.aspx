@@ -36,7 +36,7 @@
     </div>
 
     <div>
-        <asp:Label ID="lbl_delete_error" runat="server" Text="" ForeColor="#CC0000"></asp:Label>
+        <asp:Label ID="lbl_error" runat="server" Text="" ForeColor="#CC0000"></asp:Label>
     </div>
 
 </asp:Content>

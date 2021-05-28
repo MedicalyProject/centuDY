@@ -109,12 +109,16 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\MedicineController.cs" />
+    <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Factory\CartFactory.cs" />
+    <Compile Include="Factory\DetailTransactionFactory.cs" />
     <Compile Include="Factory\MedicineFactory.cs" />
+    <Compile Include="Factory\TransactionFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handlers\CartHandler.cs" />
     <Compile Include="Handlers\MedicineHandler.cs" />
+    <Compile Include="Handlers\TransactionsHandler.cs" />
     <Compile Include="Handlers\UserHandler.cs" />
     <Compile Include="Models\Cart.cs">
       <DependentUpon>CentuDYModel.tt</DependentUpon>
@@ -153,6 +157,7 @@
     <Compile Include="Repositories\CartRepository.cs" />
     <Compile Include="Repositories\CentuDYDB.cs" />
     <Compile Include="Repositories\MedicineRepository.cs" />
+    <Compile Include="Repositories\TransactionRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Views\MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
