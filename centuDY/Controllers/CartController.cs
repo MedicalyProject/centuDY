@@ -7,7 +7,7 @@ using System.Web;
 
 namespace centuDY.Controllers
 {
-    public class CartController
+    public static class CartController
     {
         private static int qty_input = 0;
 
@@ -27,17 +27,39 @@ namespace centuDY.Controllers
         }
 
         //menambah medicine ke cart user
-        public static string addItemToCart(User user, string medicineId, string qty)
+        public static string addItemToCart(int userId, string medicineId, string qty)
         {
             string response = validateQuantity(medicineId,qty);       
 
             if (response.Equals(""))
             {
-                bool success = CartHandler.addToCart(user.UserId, int.Parse(medicineId), int.Parse(qty));
+                bool success = CartHandler.addToCart(userId, int.Parse(medicineId), int.Parse(qty));
                 if (!success)
                 {
-                    response = "Unexpected error occured. Failed to add to cart";
+                    response = "[!] Unexpected error occured. Failed to add to cart";
                 }                   
+            }
+
+            return response;
+        }
+
+        //checkout: buat transaksi untuk tiap cart item, kemudian empty cart buat user
+        public static string checkoutCartsOfUser(int userId, List<Cart> carts)
+        {
+            if (carts == null || carts.Count < 1) return "[!] Cart Is Empty!";
+
+            string response = TransactionController.addTransactions(userId, carts);
+            if (response.Equals(""))
+            {
+                bool success = CartHandler.emptyCarts(userId, carts);
+                if (!success)
+                {
+                    response = "[!] Unexpected error occured. Failed to empty cart";
+                }
+                else
+                {
+                    response = "Succesfully checked out!";
+                }
             }
 
             return response;

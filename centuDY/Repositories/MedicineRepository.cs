@@ -58,7 +58,6 @@ namespace centuDY.Repositories
             }
             catch (Exception er)
             {
-
                 throw er;
             }
         }
@@ -76,6 +75,28 @@ namespace centuDY.Repositories
             db.SaveChanges();
 
             return true;
+        }
+
+        public static bool reduceMedicineStock(int id, int amount)
+        {
+            Medicine medicine = getMedicineById(id);
+
+            if (medicine == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                if (medicine.Stock - amount < 0) return false;
+                medicine.Stock -= amount;
+                db.SaveChanges();
+                return true;
+            }
+            catch(Exception er)
+            {
+                throw er;
+            }
         }
     }
 }

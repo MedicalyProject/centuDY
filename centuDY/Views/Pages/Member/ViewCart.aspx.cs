@@ -38,8 +38,7 @@ namespace centuDY.Views.Pages.Member
 
             grv_user_carts.DataSource = carts;
             grv_user_carts.DataBind();
-            calculateGrandTotal();
-            
+            calculateGrandTotal();        
         }
 
         //kalkulasi grand total dari cart saat ini
@@ -54,9 +53,18 @@ namespace centuDY.Views.Pages.Member
             lbl_grand_total.Text = sum.ToString();
         }
 
+        //execute ketika checkout button di klik (melakukan proses checkout
         protected void btn_checkout_Click(object sender, EventArgs e)
         {
-
+            User currentUser = (User)Session["current_user"];
+            List<Cart> carts = CartController.getCartByUser(currentUser.UserId);
+            string response = CartController.checkoutCartsOfUser(currentUser.UserId, carts);
+            lbl_error.Text = response;
+            if (response.Equals("Succesfully checked out!"))
+            {
+                lbl_error.ForeColor = System.Drawing.Color.Green;
+            }
+            refreshGridView(currentUser.UserId);
         }
 
         protected void grv_user_carts_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -66,7 +74,7 @@ namespace centuDY.Views.Pages.Member
 
             User logged_in_user = (User)Session["current_user"];
 
-            lbl_delete_error.Text = CartController.deleteCart(logged_in_user.UserId, medicineId);
+            lbl_error.Text = CartController.deleteCart(logged_in_user.UserId, medicineId);
 
             refreshGridView(logged_in_user.UserId);
         }
