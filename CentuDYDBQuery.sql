@@ -73,3 +73,8 @@ SELECT
 	[Address],
 	RoleName
 FROM [User] JOIN [Role] ON [Role].RoleId = [User].UserId
+
+--Alter Date to Datetime
+ALTER TABLE HeaderTransaction
+ALTER COLUMN TransactionDate DATETIME;
+GO
