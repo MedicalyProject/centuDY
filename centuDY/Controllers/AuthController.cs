@@ -22,9 +22,9 @@ namespace centuDY.Controllers
                 return null;
             }
 
-            if (UserHandler.getUserByEmailAndPassword(username, password) != null)
+            if (UserHandler.getUserByUsernameAndPassword(username, password) != null)
             {
-                return UserHandler.getUserByEmailAndPassword(username, password);
+                return UserHandler.getUserByUsernameAndPassword(username, password);
             }
 
             return null;

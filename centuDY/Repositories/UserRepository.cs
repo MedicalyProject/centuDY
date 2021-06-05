@@ -15,10 +15,10 @@ namespace centuDY.Repositories
             return (from x in db.Users where x.RoleId == 2 select x).ToList();
         }
 
-        public static User getUserByEmailAndPassword(string email, string password)
+        public static User getUserByUsernameAndPassword(string username, string password)
         {
             return (from x in db.Users
-                    where x.Username.Equals(email) && x.Password.Equals(password)
+                    where x.Username.Equals(username) && x.Password.Equals(password)
                     select x).FirstOrDefault();
         }
 

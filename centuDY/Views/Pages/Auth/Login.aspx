@@ -6,9 +6,9 @@
     <div>
         <table>
             <tr>
-                <td>Email </td>
+                <td>Username </td>
                 <td>
-                    <asp:TextBox ID="txt_email" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txt_username" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>

@@ -24,13 +24,13 @@ namespace centuDY.Views.Pages.Auth
         protected global::System.Web.UI.WebControls.Label lbl_login;
 
         /// <summary>
-        /// txt_email control.
+        /// txt_username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_email;
+        protected global::System.Web.UI.WebControls.TextBox txt_username;
 
         /// <summary>
         /// txt_password control.

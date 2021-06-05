@@ -39,13 +39,13 @@ namespace centuDY.Handlers
         }
 
 
-        public static User getUserByEmailAndPassword(string email, string password)
+        public static User getUserByUsernameAndPassword(string username, string password)
         {
-            if (email != null && password != null)
+            if (username != null && password != null)
             {
-                if (UserRepository.getUserByEmailAndPassword(email, password) != null)
+                if (UserRepository.getUserByUsernameAndPassword(username, password) != null)
                 {
-                    return UserRepository.getUserByEmailAndPassword(email, password);
+                    return UserRepository.getUserByUsernameAndPassword(username, password);
                 }
             }
 

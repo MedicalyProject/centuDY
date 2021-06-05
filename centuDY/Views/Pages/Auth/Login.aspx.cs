@@ -17,7 +17,7 @@ namespace centuDY.Views.Pages.Auth
             {
                 User user  = UserController.getUser(int.Parse(Request.Cookies.Get("loginCookie").Value));
 
-                txt_email.Text = user.Username;
+                txt_username.Text = user.Username;
                 txt_password.Attributes.Add("value", user.Password);
             }
 
@@ -33,11 +33,11 @@ namespace centuDY.Views.Pages.Auth
 
         protected void btn_login_Click(object sender, EventArgs e)
         {
-            string email = txt_email.Text;
+            string username = txt_username.Text;
             string password = txt_password.Text;
             bool is_checked = chk_remember.Checked;
 
-            User user = AuthController.login(email, password);
+            User user = AuthController.login(username, password);
 
             if (user == null)
             {
