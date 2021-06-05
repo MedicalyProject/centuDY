@@ -24,6 +24,7 @@ namespace centuDY.Repositories
                     select x).ToList();
         }
 
+        //0 references? considering to remove (?)
         public static List<HeaderTransaction> getHeaderTransactionsById(int id)
         {
             return (from x in db.HeaderTransactions
@@ -55,6 +56,11 @@ namespace centuDY.Repositories
         public static List<DetailTransaction> getAllTransactions()
         {
             return (from x in db.DetailTransactions select x).ToList();
+        }
+
+        public static List<HeaderTransaction> getAllTransactionsByHeader()
+        {
+            return (from x in db.HeaderTransactions select x).ToList();
         }
 
         public static bool addNewTransaction(HeaderTransaction transaction)

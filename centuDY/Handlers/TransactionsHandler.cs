@@ -15,6 +15,11 @@ namespace centuDY.Handlers
             return TransactionRepository.getAllTransactions();
         }
 
+        public static List<HeaderTransaction> getAllTransactionsByHeader()
+        {
+            return TransactionRepository.getAllTransactionsByHeader();
+        }
+
         public static List<DetailTransaction> getTransactionsByUserId(int userId)
         {
             return TransactionRepository.getTransactionsByUserId(userId);
