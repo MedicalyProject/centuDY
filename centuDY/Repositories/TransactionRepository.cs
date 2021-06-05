@@ -35,7 +35,7 @@ namespace centuDY.Repositories
         {
             return (from x in db.DetailTransactions
                     where x.TransactionId == transactionId && x.MedicineId == medicineId
-                    select x).First();
+                    select x).FirstOrDefault();
         }
 
         public static List<DetailTransaction> getDetailTransactionByMedicineId(int medicineId)
@@ -49,7 +49,7 @@ namespace centuDY.Repositories
         {
             return (from x in db.HeaderTransactions
                     where x.TransactionId == id
-                    select x).First();
+                    select x).FirstOrDefault();
         }
 
         public static List<DetailTransaction> getAllTransactions()
