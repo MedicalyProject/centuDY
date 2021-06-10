@@ -17,7 +17,7 @@ namespace centuDY.Views.Pages.Auth
             {
                 User user  = UserController.getUser(int.Parse(Request.Cookies.Get("loginCookie").Value));
 
-                txt_username.Text = user.Username;
+                txt_username.Attributes.Add("value",user.Username);
                 txt_password.Attributes.Add("value", user.Password);
             }
 
@@ -36,11 +36,12 @@ namespace centuDY.Views.Pages.Auth
             string username = txt_username.Text;
             string password = txt_password.Text;
             bool is_checked = chk_remember.Checked;
-
+            System.Diagnostics.Debug.WriteLine(username + ", " + password);
             User user = AuthController.login(username, password);
 
             if (user == null)
             {
+                System.Diagnostics.Debug.WriteLine("user login nonexistant");
                 lbl_error.Visible = true; 
                 return;
             }
