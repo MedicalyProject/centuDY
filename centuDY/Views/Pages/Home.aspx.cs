@@ -13,20 +13,24 @@ namespace centuDY.Views.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lbl_welcome.Visible = false;
-            if (Session["current_user"] != null)
+            if (!IsPostBack)
             {
-                User logged_in_user = (User)Session["current_user"];
-                lbl_welcome.Text = "Welcome, " + logged_in_user.Name;
-                lbl_welcome.Visible = true;
-                if (logged_in_user.RoleId == 2)
+                lbl_welcome.Visible = false;
+                if (Session["current_user"] != null)
                 {
-                    refreshGridView();
+                    User logged_in_user = (User)Session["current_user"];
+                    lbl_welcome.Text = "Welcome, " + logged_in_user.Name;
+                    lbl_welcome.Visible = true;
+                    if (logged_in_user.RoleId == 2)
+                    {
+                        refreshGridView();
+                    }
+
                 }
-                
-            } else
-            {
-                Response.Redirect("~/Views/Pages/Auth/Login.aspx"); ;
+                else
+                {
+                    Response.Redirect("~/Views/Pages/Auth/Login.aspx"); ;
+                }
             }
         }
 
