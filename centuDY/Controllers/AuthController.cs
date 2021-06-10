@@ -49,7 +49,7 @@ namespace centuDY.Controllers
                 return "[!] Username cannot be empty!";
             }
 
-            if (username.Length <= 3)
+            if (username.Length < 3)
             {
                 return "[!] Username cannot be less than 3 characters!";
             }
@@ -64,7 +64,7 @@ namespace centuDY.Controllers
                 return "[!] Password cannot be empty!";
             }
 
-            if (password.Length <= 8)
+            if (password.Length < 8)
             {
                 return "[!] Password cannot be less than 8 characters!";
             }

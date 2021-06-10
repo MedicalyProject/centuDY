@@ -25,7 +25,7 @@
                 <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
                 <asp:CommandField ButtonType="Button" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" />
                 
-                <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Add to Cart" />
+                <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Action" ShowHeader="True" Text="Add to Cart" />
                 
             </Columns>
         </asp:GridView>

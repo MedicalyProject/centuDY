@@ -37,7 +37,6 @@ namespace centuDY.Views.Pages.Member
                     Response.Redirect("~/Views/Pages/Auth/Login.aspx");
                 }
             }
-            System.Diagnostics.Debug.WriteLine("reached add to cart page");
         }
 
         //execute ketika button add to cart diklik

@@ -7,7 +7,7 @@
          <asp:Label ID="lbl_user_name" runat="server" Text="For Member : " Font-Bold="False" Font-Size="Large"></asp:Label>
     </div>
     <div>
-        <asp:GridView ID="grv_user_transactions" runat="server" AutoGenerateColumns="False"  >
+        <asp:GridView ID="grv_user_transactions" runat="server" AutoGenerateColumns="False" OnRowCreated="grv_user_transactions_RowCreated" OnRowDataBound="grv_user_transactions_RowDataBound">
             <Columns>
                 <asp:BoundField DataField="TransactionId" HeaderText="Transaction Id" SortExpression="TransactionId" />
                 <asp:BoundField DataField="Medicine.Name" HeaderText="Medicine Name" SortExpression="Medicine.Name" />
